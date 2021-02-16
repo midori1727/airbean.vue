@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div class="wrapper">
+      
       <div v-if="orderHistory.length > 0">
           <p>{{ getOrderNumber }}</p>
+          <img src="../assets/status_bild.svg" alt="airbean_photo">
           <p>Din beställning är på väg!</p>
           <button @click="toTopPage">Ok, cool!</button>
       </div>
-      <div v-else>
+          <div v-else>
           <!-- <Nav/> -->
           <p>Du har ingen status just nu</p>
       </div>
@@ -36,6 +38,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
-</style>
+.wrapper {
+    background-color: #e5674e;
+    color: white;
+    height: 89vh;
+}
+
+</style>>
