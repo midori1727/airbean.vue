@@ -33,12 +33,18 @@ export default new Vuex.Store({
       if(payload.name == ''){
         flag =1
         state.errors.push('Ange ditt namn')
-      } else if(payload.ePost === ''){
+      } else if(payload.name.match(/^[0-9]+$/)) {
+        flag =1
+        state.errors.push('Använd bara bokstäver')
+      }else if(payload.ePost === ''){
         flag =1
         state.errors.push('Ange din e-postadress')
       } else if(!regexp.test(payload.ePost)){
         flag =1
         state.errors.push('Se till att din e-postadress stämmer')
+      } else if(!payload.radio) {
+        flag =1
+        state.errors.push('Godkänn GDPR')
       }
       if(flag) {
         return 

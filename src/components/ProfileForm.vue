@@ -13,7 +13,7 @@
                   <input type="text" v-model="ePost">
               </div>
               <div class="radio">
-                  <input type="radio" name="GDPR" value="GDPR">
+                  <input type="radio" name="GDPR" value="GDPR" v-model="radio">
                   <label for="GDPR">GDPR OK!</label>
               </div>
               <div class="button">
@@ -44,6 +44,7 @@ export default {
         return {
             name: '',
             ePost: '',
+            radio: false
         }
     },
 
@@ -61,11 +62,13 @@ export default {
         onSubmit() {
             const info = {
                 name: this.name,
-                ePost: this.ePost
+                ePost: this.ePost,
+                radio: this.radio
             }
             this.$store.commit('addUserInfo', info)
             this.name = ''
             this.ePost = ''
+            this.radio = false
             if(this.$store.state.orderHistory.length > 0 && this.$store.state.userInfo.length >  0){
                 this.$router.push('/status')
                 console.log(this.$store.state.orderHistory)
@@ -76,6 +79,7 @@ export default {
 </script>
 
 <style scoped>
+
 
 .plofile-form-wrapper {
     display: flex;
@@ -88,14 +92,18 @@ export default {
 
 .radio {
     text-align: left;
-     margin-top: 0.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
 .input-form input {
-     display: block;
-     border-radius: 10px;
-     padding: 1rem 1.5rem;
+    /* display: block;
+    border-radius: 10px; */
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #2F2926;
+    background-color: #F3E4E1;
 }
 
 .input-form label {
@@ -108,6 +116,15 @@ label {
     margin-bottom: 0.5rem;
 }
 
+.button input {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid #2F2926;
+    background-color: #2F2926;
+    color: white;
+}
 
 
 
