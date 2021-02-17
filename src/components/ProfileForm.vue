@@ -162,6 +162,17 @@ label {
     font-size: 1rem;
 }
 
+.button input:hover {
+    background-color: #E5674E;
+    color: white;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
 
 
 
