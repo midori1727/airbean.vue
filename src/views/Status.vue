@@ -3,7 +3,7 @@
       
       <div v-if="orderHistory.length > 0">
           <p>{{ getOrderNumber }}</p>
-          <img src="../assets/status_bild.svg" alt="airbean_photo">
+          <img src="../assets/status_img.svg" alt="airbean_image">
           <p>Din beställning är på väg!</p>
           <button @click="toTopPage">Ok, cool!</button>
       </div>
@@ -43,7 +43,7 @@ export default {
 .wrapper {
     background-color: #e5674e;
     color: white;
-    height: 89vh;
+    height: 100vh;
 }
 
 </style>>

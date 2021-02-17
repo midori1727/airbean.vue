@@ -1,9 +1,9 @@
 <template>
-<div>
+<div class="order-history-wrapper">
     <!-- <Nav/> -->
+    <img src="../assets/Profile_img.svg" alt="profile-image">
     <h1>{{ getUserName }}</h1>
-    <h1>{{ getUserEmail }}</h1>
-
+    <p>{{ getUserEmail }}</p>
 
     <h1>Orderhistorik</h1>
     <div v-if="orderHistory.length">
@@ -18,9 +18,6 @@
     <div v-else>
         <p>Du har inget i din Orderhistorik</p>
     </div>
-    
-
-    
 
 </div>
   
@@ -53,7 +50,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.order-history-wrapper {
+    background-color: #2F2926;
+    color: white;
+    height: 100vh;
+}
+
+img {
+    padding-top: 50px;
+}
+
+h1 {
+    font-family: 'PT Serif', serif;
+}
 
 ul {
     list-style: none;

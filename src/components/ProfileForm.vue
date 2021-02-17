@@ -1,5 +1,8 @@
 <template>
   <div>
+      <div class="background">
+          <header></header>
+      </div>
       <!-- <Nav/> -->
       <div class="plofile-form-wrapper">
           <img src="../assets/airbean_a_logo.svg" alt="airbean_a_logo">
@@ -80,6 +83,23 @@ export default {
 
 <style scoped>
 
+.background {
+    background-color: #2F2926;
+    height: 130vh;
+
+}
+
+header {
+    background: url('../assets/header.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+    height: 29vh;
+    width: 100%;
+    background-color: #f3e4e1;;
+    background-color: #2F2926;
+}
 
 .plofile-form-wrapper {
     display: flex;
@@ -88,6 +108,15 @@ export default {
     justify-content: center;
     color: #2F2926;
     background-color: #F3E4E1;
+    height: 100vh;
+    margin-top: -50rem;
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+h1 {
+    font-family: 'PT Serif', serif;
 }
 
 .radio {
@@ -97,13 +126,12 @@ export default {
 }
 
 .input-form input {
-    /* display: block;
-    border-radius: 10px; */
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
     outline: none;
     border: 1px solid #2F2926;
     background-color: #F3E4E1;
+    margin-bottom: 10px;
 }
 
 .input-form label {
@@ -114,16 +142,25 @@ export default {
 label {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.button {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .button input {
     width: 12rem;
     height: 3rem;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     outline: none;
     border: 1px solid #2F2926;
     background-color: #2F2926;
     color: white;
+    font-family: 'PT Serif', serif;
+    font-size: 1rem;
 }
 
 
