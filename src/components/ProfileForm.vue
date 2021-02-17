@@ -97,7 +97,6 @@ header {
     background-size: cover;
     height: 29vh;
     width: 100%;
-    background-color: #f3e4e1;;
     background-color: #2F2926;
 }
 

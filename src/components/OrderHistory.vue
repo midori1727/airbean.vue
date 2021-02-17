@@ -1,9 +1,13 @@
 <template>
+
 <div class="order-history-wrapper">
     <!-- <Nav/> -->
+    <header></header>
     <img src="../assets/Profile_img.svg" alt="profile-image">
-    <h1>{{ getUserName }}</h1>
-    <p>{{ getUserEmail }}</p>
+    <div class=user_name>
+         <h1>{{ getUserName }}</h1>
+         <p>{{ getUserEmail }}</p>
+    </div>
 
     <h1>Orderhistorik</h1>
     <div v-if="orderHistory.length">
@@ -58,12 +62,32 @@ export default {
     height: 100vh;
 }
 
+header {
+    background: url('../assets/header.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+    height: 29vh;
+    width: 100%;
+    background-color: #2F2926;
+}
+
+
 img {
     padding-top: 50px;
 }
 
 h1 {
     font-family: 'PT Serif', serif;
+}
+
+.user_name h1 {
+     margin-bottom: 0px;
+}
+
+.user_name p {
+    margin-top: 0px;
 }
 
 ul {
