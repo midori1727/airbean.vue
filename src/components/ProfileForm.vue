@@ -8,6 +8,15 @@
           <img src="../assets/airbean_a_logo.svg" alt="airbean_a_logo">
           <h1>Välkommen till AirBean-familjen!</h1>
           <p>Genom att skapa ett konto nedan kan du spara och se din orderhistorik.</p>
+
+          <p class="error" v-if="errors.length">
+          <b>Korrigera följande fel:</b>
+              <ul>
+                  <li v-for="error in errors" :key="error.index">
+                  {{ error }}
+                  </li>
+              </ul>
+          </p>    
           <form @submit.prevent="onSubmit">
               <div class="input-form">
                   <label for="name">Namn</label>
@@ -22,17 +31,9 @@
               <div class="button">
                   <input type="submit" value="Brew me a cup!">
               </div>
-              
           </form>
 
-          <p v-if="errors.length">
-          <b>Korrigera följande fel:</b>
-              <ul>
-                  <li v-for="error in errors" :key="error.index">
-                  {{ error }}
-                  </li>
-              </ul>
-          </p>      
+            
 
       </div>
   </div>
@@ -69,9 +70,6 @@ export default {
                 radio: this.radio
             }
             this.$store.commit('addUserInfo', info)
-            this.name = ''
-            this.ePost = ''
-            this.radio = false
             if(this.$store.state.orderHistory.length > 0 && this.$store.state.userInfo.length >  0){
                 this.$router.push('/status')
                 console.log(this.$store.state.orderHistory)
@@ -170,6 +168,11 @@ label {
 
 ul {
     list-style: none;
+    padding-left: 0px;
+}
+
+.error {
+    color: rgb(238, 10, 10);
 }
 
 
