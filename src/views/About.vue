@@ -31,15 +31,11 @@ export default {
 
 <style scoped>
 
-/* Typography */
-h1 {
-font-weight: 700;
-}
-
 h1 {
     font-family: 'PT Serif', serif;
-    font-size: 5rem;
+    font-size: 4.5rem;
     line-height: 1.4em;
+    font-weight: 700;
 } 
 
 .bold-text{
@@ -84,7 +80,3 @@ article p {
   margin-top: 5em;
 }
 </style>
-<!-- 
-
-
--->
