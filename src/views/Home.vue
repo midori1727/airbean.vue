@@ -1,7 +1,9 @@
 <template>
 <div class="wrapper">
 <main class="main">
+  <router-link to="/menu">
     <img alt="logo" src="../assets/airbean_logo.svg"/>
+    </router-link>
 </main>
 </div>
 </template>
