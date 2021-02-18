@@ -5,7 +5,7 @@
           <ProfileForm/>
       </div>
       <div v-else>
-           <OrderHistory/>
+          <OrderHistory/>
       </div>
   </div>
 </template>

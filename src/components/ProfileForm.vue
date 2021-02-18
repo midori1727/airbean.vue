@@ -162,7 +162,6 @@ label {
 
 .button input:hover {
     background-color: #E5674E;
-    color: white;
     border: none;
 }
 
