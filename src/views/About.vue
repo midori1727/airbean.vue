@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
         <Header />
+        <Nav />
         <article>
             <h1> Vårt kaffe </h1>
             <p class="bold-text">Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio, grounds dripper, crema, strong whipped, variety extra iced id lungo half and half mazagran. Pumpkin spice.
@@ -20,11 +21,13 @@
 <script>
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Nav from '../components/Nav.vue'
 export default {
     name: 'About',
   components: {
     Header,
-    Footer
+    Footer,
+    Nav
   }
     }
 </script>
