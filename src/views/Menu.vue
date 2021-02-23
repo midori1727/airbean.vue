@@ -4,6 +4,7 @@
         <article>
             <h1> Meny </h1>
             <div>Kundvagn: {{ getCartAmount }}st</div>
+        </article>
 <Footer />
     </div>
 </template>
