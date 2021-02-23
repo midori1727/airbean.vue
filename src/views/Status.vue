@@ -10,7 +10,7 @@
           <button @click="toTopPage">Ok, cool!</button>
       </div>
           <div class="no_history" v-else>
-          <Nav/>
+          <!-- <Nav/> -->
           <p>Du har ingen status just nu</p>
           <button @click="toTopPage">Ok, cool!</button>
       </div>
@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import Nav from '../components/Nav.vue'
+// import Nav from '../components/Nav.vue'
 
 export default {
-  components: { Nav },
+//   components: { Nav },
 
     computed: {
         orderHistory() {

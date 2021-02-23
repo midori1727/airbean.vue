@@ -5,46 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    menuItems: [
-      {
-        id: 1,
-        name: 'Bryggkaffe',
-        description: 'Bryggd på månadens bönor',
-        price: 49
-      },
-      {
-        id: 2,
-        name: 'Caffè Doppio',
-        description: 'Bryggd på månadens bönor',
-        price: 49
-      },
-      {
-        id: 3,
-        name: 'Cappuccino',
-        description: 'Bryggd på månadens bönor',
-        price: 49
-      },
-      {
-        id: 4,
-        name: 'Latte Macchiato',
-        description: 'Bryggd på månadens bönor',
-        price: 49
-      },
-      {
-        id: 5,
-        name: 'Kaffe Latte',
-        description: 'Bryggd på månadens bönor',
-        price: 49
-      },
-      {
-        id: 6,
-        name: 'Cortado',
-        description: 'Bryggd på månadens bönor',
-        price: 39
-      }
-    ],
-
-    CartItems: [],
     errors:[],
     userInfo: [],
     orderHistory:[],
@@ -52,20 +12,6 @@ export default new Vuex.Store({
 
   mutations: {
   
-    addCart(state, product) {
-      let itemObj = state.CartItems.find(item => item.id == product.id)
-      if(itemObj) {
-        itemObj.amount += 1
-      } else {
-        state.CartItems.push({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          amount: 1
-        })
-      }
-    },
-   
     decreaseProduct(state, payload){
       const product = state.CartItems.find(item => item.id == payload)
       const indexOf = state.CartItems.indexOf(product)
@@ -101,49 +47,9 @@ export default new Vuex.Store({
         state.userInfo.push(payload)
       } 
     },
-
-    ckeckOut(state) {
-      function formatDate(dt) {
-        var y = ('0' + dt.getFullYear()).slice(-2);
-        var m = ('0'+ (dt.getMonth()+1)).slice(-2);
-        var d = ('0' + dt.getDate()).slice(-2);
-        return (y + '/' + m + '/' + d);
-      }
-      let date= formatDate(new Date());
-
-      const source ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-      const N=13
-      let number = '#' + Array.from(Array(N)).map(()=>source[Math.floor(Math.random()*source.length)]).join('')
-
-      const totalPrice= state.CartItems.reduce((total, product) => {
-        return total + product.price * product.amount
-      }, 0)
-
-      state.orderHistory.push({
-        orderdDate: date,
-        orderNumber: number,
-        total: totalPrice
-      })
-      state.CartItems = []
-    }
   },
 
   getters: {
-    CartItems: state => {
-      return state.CartItems
-    },
-
-    cartTotalPrice: (state, getters) => {
-      return getters.CartItems.reduce((total, product) => {
-        return total + product.price * product.amount
-      }, 0)
-    },
-    
-    getCartAmount: (state, getters) => {
-      return getters.CartItems.reduce((total, product) => {
-        return total + product.amount
-      }, 0)
-    },
    
     getUserName: state => {
       return state.userInfo[0].name

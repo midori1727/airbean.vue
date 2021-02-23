@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Nav />
+      <!-- <Nav /> -->
      
       <div v-if="!userInfo.length">
           <ProfileForm/>
@@ -14,7 +14,7 @@
 <script>
 import ProfileForm from '../components/ProfileForm.vue'
 import OrderHistory from '../components/OrderHistory.vue'
-import Nav from '../components/Nav.vue'
+// import Nav from '../components/Nav.vue'
 
 
 export default {
@@ -22,7 +22,7 @@ export default {
     components: {
         ProfileForm,
         OrderHistory,
-        Nav
+        // Nav
     },
 
     computed: {
